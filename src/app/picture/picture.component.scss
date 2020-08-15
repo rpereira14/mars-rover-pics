@@ -1,0 +1,11 @@
+@import "../styles/variables";
+.picture-group-title{
+    padding: 16px 36px;
+    span  {
+        color: $linkColor;
+        font-size: 20px;
+    }
+}
+.pics-container{
+    margin: 0 5%;
+}

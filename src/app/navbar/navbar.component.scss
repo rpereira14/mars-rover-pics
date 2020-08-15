@@ -1,0 +1,12 @@
+@import "../styles/variables";
+
+a{
+    color: $textDefaultColor;
+}
+.nav-link{
+    color: $linkColor;
+}
+.app-logo{
+    font-size: 36px;
+    padding: $padding ;
+}

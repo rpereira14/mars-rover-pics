@@ -6,10 +6,10 @@ export class Picture{
     sol:number;
     camera:Camera;
     img_src:string;
-    earth_date:Date;
+    earth_date:number;
     rover:Rover;
     
-    constructor(id:number, sol:number, camera:Camera, img_src:string, earth_date:Date, rover:Rover){
+    constructor(id:number, sol:number, camera:Camera, img_src:string, earth_date:number, rover:Rover){
         this.id = id;
         this.sol = sol;
         this.camera = camera;
