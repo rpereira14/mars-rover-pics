@@ -1,13 +1,12 @@
-declare module namespace {
 
-    export interface Camera {
+    export class Camera {
         id: number;
         name: string;
         rover_id: number;
         full_name: string;
     }
 
-    export interface Rover {
+    export class Rover {
         id: number;
         name: string;
         landing_date: string;
@@ -15,7 +14,7 @@ declare module namespace {
         status: string;
     }
 
-    export interface Photo {
+    export class Photo {
         id: number;
         sol: number;
         camera: Camera;
@@ -24,8 +23,7 @@ declare module namespace {
         rover: Rover;
     }
 
-    export interface RootObject {
+    export class RootObject {
         photos: Photo[];
     }
 
-}
