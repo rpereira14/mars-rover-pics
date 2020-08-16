@@ -15,6 +15,6 @@ export class PictureService {
  
   public getPictures()
   {
-    return this.client.get(this.baseUrl + "photos?sol=0&" + this.apiKey);
+    return this.client.get(this.baseUrl + "photos?sol=1&" + this.apiKey);
   }
 }

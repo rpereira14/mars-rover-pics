@@ -14,14 +14,16 @@ export class PictureComponent implements OnInit {
   constructor(private pictureService: PictureService) {
     
    }
-
+   teste:any[] = [];
   photos: Photo[] = [];
   rootObject: RootObject;
 
   selectedPicture: Picture;
   ngOnInit() {
-    this.getPictures();
-    
+    //this.getPictures();
+    for(let i = 0; i <10; i++){
+      this.teste.push({id:i});
+    }
     //console.log(this.rootObject);
   }
 
@@ -37,6 +39,9 @@ export class PictureComponent implements OnInit {
   getPictures()
   {
     let response = this.pictureService.getPictures();
-    response.subscribe((res:RootObject)=>{console.log(res); this.rootObject = res; this.photos = this.rootObject.photos;});
+    response.subscribe((res:RootObject)=>{
+      this.rootObject = res;
+      this.photos = this.rootObject.photos;
+    });
   }
 }

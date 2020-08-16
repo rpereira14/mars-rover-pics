@@ -3,15 +3,33 @@
         <span>Curiosity Rover Pictures</span>
     </div>
     <div class="row pics-container">
-        <div *ngFor="let pic of photos" 
+        <!-- <div *ngFor="let pic of photos" 
             class="col-md-2 pic-card-container" 
             [class.selectedPicture]="pic === selectedPicture"
             (mouseover)="mouseOver(pic)"
             (mouseleave)="mouseLeave()">
-            <div *ngIf="selectedPicture === this.pic" style="width: 100px; height: 100px; color: blue; position: absolute;">
-                <span>Id = {{pic.id}} <br/></span>
+            <div *ngIf="selectedPicture === this.pic"  class="pic-info-card">
+                <div>
+                    <img class="d-block w-100" style="" src="{{pic.img_src}}" >
+                    <span>Id = {{pic.id}} <br/></span>
+                </div>
             </div>
-            <img class="d-block w-100" src="{{pic.img_src}}" alt="First slide">
+            <img class="d-block w-100" src="{{pic.img_src}}" >
+        </div> -->
+        <div *ngFor="let pic of teste" 
+            class="col-md-2 pic-card-container" 
+            [class.selectedPicture]="pic === selectedPicture"
+            (mouseover)="mouseOver(pic)"
+            (mouseleave)="mouseLeave()">
+            <div *ngIf="selectedPicture === this.pic" class="pic-info-card">
+                <div>
+                    <img class="d-block w-100" style="" src="http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00000/opgs/edr/fcam/FRA_397502305EDR_D0010000AUT_04096M_.JPG" >
+                    <span>Camera name = {{pic.id}}</span><br/>
+                    <span>Full name = {{pic.id}}</span><br/>
+                    <span>Landing date = {{pic.id}}</span>
+                </div>
+            </div>
+            <img class="d-block w-100" src="http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00000/opgs/edr/fcam/FRA_397502305EDR_D0010000AUT_04096M_.JPG" >
         </div>
     </div>  
 </div>
