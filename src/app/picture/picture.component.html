@@ -1,6 +1,11 @@
 <div>
     <div class="picture-group-title">
         <span>{{selectedRover}} Rover Pictures</span>
+        <form [formGroup]="changeSolForm" (ngSubmit)="onSubmit(changeSolForm.value)" class="sol-search">
+            <label>Martian day (sol):&nbsp; &nbsp;</label>
+            <input class="form-control" type="number" value="{{currentSol}}" formControlName="sol" placeholder="{{currentSol}}">
+            <button type="submit" class="btn btn-dark"><span class="fa fa-search"></span></button>
+        </form>
     </div>
     <div class="row pics-container">
         <div *ngFor="let pic of photos" class="col-md-2 pic-card-container" [class.selectedPicture]="pic === selectedPicture" (mouseover)="mouseOver(pic)" (mouseleave)="mouseLeave()">

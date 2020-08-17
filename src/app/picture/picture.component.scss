@@ -2,6 +2,7 @@
 .picture-group-title {
     padding: 16px 36px;
     margin: $margin;
+    display: flow-root;
     span {
         color: $linkColor;
         font-size: 20px;
@@ -12,8 +13,29 @@
     margin: $margin;
 }
 
+.btn-dark {
+    background-color: $backgroudColor;
+}
+
+.sol-search {
+    color: $linkColor;
+    display: flex;
+    align-items: center;
+    //width: 20%;
+    float: right;
+    label {
+        color: $linkColor;
+        min-width: max-content;
+        display: inline-block;
+        margin-bottom: 0;
+    }
+    input {
+        margin: 0 5px;
+    }
+}
+
 .pic-card-container {
-    margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: center;
     //align-items: flex-start;
