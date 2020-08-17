@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PictureService } from '../picture.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pictureService: PictureService) { }
 
   ngOnInit() {
   }
 
+  changeRover(rover:string){
+    console.log("change rover clicked")
+    this.pictureService.changeRover(rover);
+  }
 }

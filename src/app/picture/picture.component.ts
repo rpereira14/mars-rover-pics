@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PictureService} from '../picture.service';
-import { Picture } from '../picture';
 import { count } from 'rxjs/operators';
+import * as _ from 'lodash';
 import { RootObject, Photo, Rover, Camera} from '../namespace';
 
 @Component({
@@ -14,28 +14,29 @@ export class PictureComponent implements OnInit {
   constructor(private pictureService: PictureService) {
     
    }
-   teste:any[] = [];
+  selectedRover:string = "Curiosity";
   photos: Photo[] = [];
   rootObject: RootObject;
-
-  selectedPicture: Picture;
+  selectedPicture: Photo;
   ngOnInit() {
-    //this.getPictures();
-    for(let i = 0; i <10; i++){
-      this.teste.push({id:i});
-    }
-    //console.log(this.rootObject);
+    this.pictureService.$isRoverClicked.subscribe((data:string) => {this.changeRover(data); this.selectedRover = _.startCase(data)})
+    this.getPictures();
   }
 
-  mouseOver(pic:Picture){
+  mouseOver(pic:Photo){
     this.selectedPicture = pic;
-    //console.log(pic.id);
   }
   mouseLeave(){
-    console.log("mouseleave")
     this.selectedPicture = null;
   }
 
+  changeRover(rover:string){
+    let response = this.pictureService.getPictures(rover);
+    response.subscribe((res:RootObject)=>{
+      this.rootObject = res;
+      this.photos = this.rootObject.photos;
+    });
+  }
   getPictures()
   {
     let response = this.pictureService.getPictures();

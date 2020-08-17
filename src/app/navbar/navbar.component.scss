@@ -1,12 +1,15 @@
 @import "../styles/variables";
+.nav-link {
+    color: $linkColor !important;
+    &:hover {
+        cursor: pointer;
+        color: $textDefaultColor !important;
+        text-decoration: underline !important;
+    }
+    ;
+}
 
-a{
-    color: $textDefaultColor;
-}
-.nav-link{
-    color: $linkColor;
-}
-.app-logo{
+.app-logo {
     font-size: 36px;
-    padding: $padding ;
+    padding: $padding;
 }
